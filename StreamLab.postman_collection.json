@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "00007686-5900-4706-a2df-e3a9036c6057",
+		"name": "StreamLab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13455599"
+	},
+	"item": [
+		{
+			"name": "ProblemOne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemOne",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemOne"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemTwo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemTwo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemTwo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemThree",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemThree",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemThree"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemFour",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemFour",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemFour"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemFive",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemFive",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemFive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemSix",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemSix",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemSix"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemSeven",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemSeven",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemSeven"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemEight",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemEight",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemEight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemNine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemNine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemNine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemTen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemNine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemNine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemEleven",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemEleven",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemEleven"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemTwelve",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemTwelve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemTwelve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemThirteen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemThirteen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemThirteen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemFourteen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemFourteen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemFourteen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemFifteen",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemFifteen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemFifteen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemSixteen",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemSixteen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemSixteen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProblemSeventeen",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/problemSeventeen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"problemSeventeen"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
