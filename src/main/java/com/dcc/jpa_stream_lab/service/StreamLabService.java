@@ -1,9 +1,12 @@
 package com.dcc.jpa_stream_lab.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,22 +61,23 @@ public class StreamLabService {
     	return products.findAll().stream().filter(p -> p.getName().contains("s")).toList();
     }
 
-    public List<User> ProblemFive()
-    {
+    public List<User> ProblemFive() throws ParseException {
         // Write a query that gets all of the users who registered BEFORE 2016
         // Return the list
         // Research 'java compare dates'
         // You may need to use the helper classes imported above!
-    	
-        return null;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date d1 = sdf.parse("2016-01-01");
+    	return users.findAll().stream().filter(d -> d.getRegistrationDate().before(d1)).toList();
     }
 
-    public List<User> ProblemSix()
-    {
+    public List<User> ProblemSix() throws ParseException {
         // Write a query that gets all of the users who registered AFTER 2016 and BEFORE 2018
         // Return the list
-
-        return null;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date d1 = sdf.parse("2016-01-01");
+        Date d2 = sdf.parse("2018-01-01");
+        return users.findAll().stream().filter(d -> d.getRegistrationDate().before(d2) && d.getRegistrationDate().after(d1)).toList();
     }
 
     // <><><><><><><><> R Actions (Read) with Foreign Keys <><><><><><><><><>
@@ -91,15 +95,21 @@ public class StreamLabService {
     {
         // Write a query that retrieves all of the products in the shopping cart of the user who has the email "afton@gmail.com".
         // Return the list
-
-    	return null;
+        User customer = users.findAll().stream().filter(u -> u.getEmail().equals("afton@gmail.com")).findFirst().orElse(null);
+        assert customer != null;
+        List<ShoppingcartItem> cart = customer.getShoppingcartItems();
+        List<Product> items = cart.stream().map(ShoppingcartItem::getProduct).toList();
+        return items;
     }
 
     public long ProblemNine()
     {
         // Write a query that retrieves all of the products in the shopping cart of the user who has the email "oda@gmail.com" and returns the sum of all of the products prices.
     	// Remember to break the problem down and take it one step at a time!
-
+        User customer = users.findAll().stream().filter(u -> u.getEmail().equals("odan@gmail.com")).findFirst().orElse(null);
+        assert customer != null;
+        List<ShoppingcartItem> cart = customer.getShoppingcartItems();
+        List<Product> items = cart.stream().map(ShoppingcartItem::getProduct).toList();
 
     	return 0;
 
