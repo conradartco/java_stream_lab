@@ -8,6 +8,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -106,21 +107,24 @@ public class StreamLabService {
     {
         // Write a query that retrieves all of the products in the shopping cart of the user who has the email "oda@gmail.com" and returns the sum of all of the products prices.
     	// Remember to break the problem down and take it one step at a time!
-        User customer = users.findAll().stream().filter(u -> u.getEmail().equals("odan@gmail.com")).findFirst().orElse(null);
+        User customer = users.findAll().stream().filter(u -> u.getEmail().equals("oda@gmail.com")).findFirst().orElse(null);
         assert customer != null;
         List<ShoppingcartItem> cart = customer.getShoppingcartItems();
         List<Product> items = cart.stream().map(ShoppingcartItem::getProduct).toList();
-
-    	return 0;
-
+        List<Integer> prices = items.stream().map(Product::getPrice).toList();
+        int sum = prices.stream().mapToInt(Integer::intValue).sum();
+    	return sum;
     }
 
     public List<Product> ProblemTen()
     {
         // Write a query that retrieves all of the products in the shopping cart of users who have the role of "Employee".
     	// Return the list
-
-    	return null;
+        Role customerRole = roles.findAll().stream().filter(r -> r.getName().equals("Employee")).findFirst().orElse(null);
+        List<User> customers = users.findAll().stream().filter(u -> u.getRoles().contains(customerRole)).toList();
+        List<ShoppingcartItem> cart = customers.stream().flatMap(i -> i.getShoppingcartItems().stream()).toList();
+        List<Product> items = cart.stream().map(ShoppingcartItem::getProduct).toList();
+        return items;
     }
 
     // <><><><><><><><> CUD (Create, Update, Delete) Actions <><><><><><><><><>
@@ -141,9 +145,12 @@ public class StreamLabService {
     {
         // Create a new Product object and add that product to the Products table.
         // Return the product
-    	
-
-    	return null;
+    	Product newProduct = new Product();
+        newProduct.setDescription("Bleach");
+        newProduct.setName("Clorox");
+        newProduct.setPrice(20);
+        products.save(newProduct);
+    	return newProduct;
 
     }
 
@@ -161,8 +168,14 @@ public class StreamLabService {
     	// Create a new ShoppingCartItem to represent the new product you created being added to the new User you created's shopping cart.
         // Add the product you created to the user we created in the ShoppingCart junction table.
         // Return the ShoppingcartItem
-
-    	return null;
+        User david = users.findAll().stream().filter(u -> u.getEmail().equals("david@gmail.com")).findFirst().orElse(null);
+        Product bleach = products.findAll().stream().filter(c -> c.getName().equals("Clorox")).findFirst().orElse(null);
+        ShoppingcartItem newItem = new ShoppingcartItem();
+        newItem.setProduct(bleach);
+        newItem.setUser(david);
+        newItem.setQuantity(1);
+        shoppingcartitems.save(newItem);
+    	return newItem;
     	
     }
 
