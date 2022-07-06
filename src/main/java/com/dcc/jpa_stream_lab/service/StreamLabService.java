@@ -193,19 +193,48 @@ public class StreamLabService {
     {
         // Update the price of the product you created to a different value.
         // Return the updated product
-    	return null;
+        Product product = products.findAll().stream().filter(p -> p.getName().equals("Clorox")).findFirst().orElse(null);
+        product.setPrice(12);
+    	return product;
     }
 
     public User ProblemSeventeen()
     {
         // Change the role of the user we created to "Employee"
         // HINT: You need to delete the existing role relationship and then create a new UserRole object and add it to the UserRoles table
-
-    	return null;
+        User user = users.findAll().stream().filter(u -> u.getEmail().equals("mike@gmail.com")).findFirst().orElse(null);
+        Role customerRole = roles.findAll().stream().filter(r -> r.getName().equals("Customer")).findFirst().orElse(null);
+        assert user != null;
+        user.removeRole(customerRole);
+        Role newRole = roles.findAll().stream().filter(r -> r.getName().equals("Employee")).findFirst().orElse(null);
+        user.addRole(newRole);
+    	return user;
     }
 
-    
-    
-	
+    public User ProblemEighteen()
+    {
+        // Oda has been banned from the supermarket
+        // Delete the role relationship from the user who has the email "oda@gmail.com"
+        User user = users.findAll().stream().filter(u -> u.getEmail().equals("oda@gmail.com")).findFirst().orElse(null);
+        Role customerRole = roles.findAll().stream().filter(r -> r.getName().equals("Customer")).findFirst().orElse(null);
+        assert user != null;
+        user.removeRole(customerRole);
+        return user;
+    }
+
+    public User ProblemNineteen()
+    {
+        // Delete all shopping cart items from the user "oda@gmail.com"
+
+        return null;
+    }
+
+    public User ProblemTwenty()
+    {
+        // Delete the "oda@gmail.com" user
+
+        return null;
+    }
+
 
 }
